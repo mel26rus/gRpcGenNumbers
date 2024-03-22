@@ -1,0 +1,13 @@
+syntax = "proto3";
+package com.example.grpc;
+
+message getNumRequset {
+  int32 number = 1;
+}
+message getNumResponse {
+  int32 number = 1;
+}
+
+service RandNumService {
+  rpc getNum(getNumRequset) returns (getNumResponse);
+}

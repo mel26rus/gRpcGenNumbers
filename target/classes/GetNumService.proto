@@ -1,0 +1,14 @@
+syntax = "proto3";
+package com.example.grpc;
+
+message getNumRequest {
+  int32 firstValue = 1;
+  int32 lastValue = 2;
+}
+message getNumResponse {
+  int32 currentValue = 1;
+}
+
+service GetNumService {
+  rpc getNum(getNumRequest) returns (stream getNumResponse);
+}
